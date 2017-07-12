@@ -3,77 +3,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/css/normalize.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/css/zzsc.css">
-<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/dist/aos.css">
-<link rel="stylesheet" href="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/css/styles.css">
 <title>Insert title here</title>
+<link href="${pageContext.servletContext.contextPath}/resources/jquery-vertical-accordion-image/css/style.css" type="text/css"  rel="stylesheet" />
+<script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery-vertical-accordion-image/js/jquery.min.js"></script>
+
 <style type="text/css">
-.code{
-	width: 80%;
-	height: 360px;
-	margin: 50px 0;
-}
 </style>
 </head>
 <body>
-<header class="hero">
-  <div class="hero-center">
-    <h1 style="font-family:Microsoft YaHei">aos.js-超赞页面滚动元素动画jQuery动画库</h1>
-    <h2 class="hero__text" aos="fade-up" aos-easing="ease" aos-delay="400">Animate On Scroll <span>Library</span></h2>
-  </div>
-  <span class="hero__scroll" aos="fade-up" aos-easing="ease" aos-delay="800"> Scroll down <br>
-  <i class="chevron bottom"></i> </span> </header>
-  
-  
-<section class="section section--code">
-  <div class="container" style="width: 1500px;">
-    <h2 class="section-title">Fade</h2>
-    <div class="code code--small code--left" aos="fade-up">
-      <pre><code class="html">&lt;div aos="fade-up">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--right" aos="fade-down">
-      <pre><code>&lt;div aos="fade-down">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--left" aos="fade-right">
-      <pre><code>&lt;div aos="fade-right">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--right" aos="fade-left">
-      <pre><code>&lt;div aos="fade-left">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--left" aos="fade-up-right">
-      <pre><code>&lt;div aos="fade-up-right">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--right" aos="fade-up-left">
-      <pre><code>&lt;div aos="fade-up-left">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--left" aos="fade-down-right">
-      <pre><code>&lt;div aos="fade-down-right">&lt;/div></code></pre>
-    </div>
-    <div class="code code--small code--right" aos="fade-down-left">
-      <pre><code>&lt;div aos="fade-down-left">&lt;/div></code></pre>
-    </div>
-  </div>
-</section>
+<div class="flash4" style="margin-top: 50px;float: left;">
+	<ul>
+    	<li class="first">
+        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/img/sub/home2.JPG" width="538" height="405"  alt="" class="tm"></div>
+            <div class="imgCen">给你15分钟做“对”的时尚人</div>
+        </li>
+        <li>
+        	<div class="imgTop"><img src="images/ruili_img2.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">蒂芙尼为你吟唱一曲自然颂</div>
+        </li>
+        <li>
+        	<div class="imgTop"><img src="images/ruili_img3.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">瑞丽·妆 线上精品轻杂志</div>
+        </li>
+        <li>
+        	<div class="imgTop"><img src="images/ruili_img4.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">《ar》刘海造型 女孩只需这样即刻焕然一新</div>
+        </li>
+        <li>
+        	<div class="imgTop"><img src="images/ruili_img5.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">电影×大明星 见证传奇从戛纳诞生</div>
+        </li>
+        <li>
+        	<div class="imgTop"><img src="images/ruili_img6.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">重返20岁试用周</div>
+        </li>
+        <li class="fast">
+        	<div class="imgTop"><img src="images/ruili_img7.jpg" width="538" height="405"  alt=""></div>
+            <div class="imgCen">玩美女孩盖天天 阳光女神进阶攻略</div>
+        </li>
+    </ul>	
+</div>
+<div style="border: 1px solid white;float: left;margin-top: 50px;width: 300px;height: 250px;">
+</div>
 
-<script src="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/js/highlight.min.js"></script>
-<script src="${pageContext.servletContext.contextPath }/resources/jquery-page-scroll-animation/dist/aos.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-	AOS.init({
-		easing: 'ease-out-back',
-		duration: 1000
-	});
-</script> 
-<script>
-	hljs.initHighlightingOnLoad();
+<script src="${pageContext.servletContext.contextPath}/resources/jquery-vertical-accordion-image/js/script.js" type="text/javascript"></script>
 
-	$('.hero__scroll').on('click', function(e) {
-		$('html, body').animate({
-			scrollTop: $(window).height()
-		}, 1200);
-	});
-</script>
 </body>
 </html>

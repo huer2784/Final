@@ -80,7 +80,7 @@ body {
   font-family: Helvetica,Tahoma;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+}
 
 *, *:before, *:after {
   box-sizing: border-box; }
