@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 footer {
-	height: 300px;
+	height: auto;
 	margin-top: 60px;
 	border-top: 1px dotted #a6a6a6;
 }
