@@ -448,6 +448,7 @@ function reload(){
 </style>
 </head>
 <body>
+<%@ include file="../sub/header.jspf"%>
 	<div class="t-container">
 		<div class="t-con-title" style="border: 3px solid red;"></div>
 		
@@ -498,16 +499,7 @@ function reload(){
 			</c:forEach>
 			</ul>
 		</div>
-	
-		
-		
-		
-		
 		</div>
-		
-		
-		
-		
 		<div class="t-con-title">
 			<span style="font-weight: bold;font-size: 20px;color:red;cursor: pointer;" id="search_result" onclick="reload()">' ${search } '</span>
 			<span style="font-size: 20px;display: inline-block;text-indent: 20px;">에 대한 물품 검색결과(${totalCount})</span><br>
@@ -519,11 +511,6 @@ function reload(){
 				</c:if>
 			</c:forEach>
 		</div>
-		
-		
-		
-		
-		
 		
 		<div class="t-auc-con">
 			<c:if test="${totalList.size() gt 0}">
@@ -554,6 +541,6 @@ function reload(){
 		</div>
 		<div class="t-footer"></div>
 	</div>
-
+<%@ include file="../sub/footer.jspf"%>
 </body>
 </html>

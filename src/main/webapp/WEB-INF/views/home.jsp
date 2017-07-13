@@ -8,15 +8,79 @@
 <head>
 <title>Home</title>
 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery-vertical-accordion-image/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".imgCen").on("click",function(){
+		var str=$(this).attr("id");
+		str=str.split("_");
+		var ctgNum=str[1];
+		var name1="h_pnum_"+str[1];
+		name1=$("#"+name1).text();
+		var search_ctg=name1;
+		sendCtg(search_ctg, ctgNum);
+	});
+});
+//=====================카테고리 이동
+function sendCtg(ctg, ctgNum){
+	var form=document.createElement("form");
+	form.method="post";
+	form.action="${pageContext.servletContext.contextPath}/auction/auctionList";
+	var e1=document.createElement("input");
+	var e2=document.createElement("input");
+	var e3=document.createElement("input");
+	var e4=document.createElement("input");
+	var e5=document.createElement("input");
+	var e6=document.createElement("input");
+	var e7=document.createElement("input");
+	var e8=document.createElement("input");
+	var e9=document.createElement("input");
+	
+	e1.name="curPage";
+	e2.name="perPage";
+	e3.name="category";
+	e4.name="kind";
+	e5.name="search";
+	e6.name="ctgNum";
+	e7.name="pri_curPage";
+	e8.name="view_kind";
+	e9.name="isSearch";
+	
+	e1.value=1;
+	e2.value=8;
+	e3.value=ctg;
+	e4.value="titleContents";
+	e5.value="";
+	e6.value=ctgNum;
+	e7.value=1;
+	e8.value="album";
+	e9.value="n";
+	
+	e1.type="hidden";
+	e2.type="hidden";
+	e3.type="hidden";
+	e4.type="hidden";
+	e5.type="hidden";
+	e6.type="hidden";
+	e7.type="hidden";
+	e8.type="hidden";
+	e9.type="hidden";
+	document.body.appendChild(form);
+	form.appendChild(e1);
+	form.appendChild(e2);
+	form.appendChild(e3);
+	form.appendChild(e4);
+	form.appendChild(e5);
+	form.appendChild(e6);
+	form.appendChild(e7);
+	form.appendChild(e8);
+	form.appendChild(e9);
+	form.submit();
+}
 
+</script>
 <style type="text/css">
-
-
-
-
-
-
 /*accordion*/
+
 .flash4{width:1180px;height:405px;margin:0px auto;margin-bottom:20px;position:relative;}
 .flash4 ul li{width:106px;height:405px;border-left:1px solid white;position:relative;overflow:hidden;float:left;}
 .flash4 ul li .imgTop img.tm{opacity:1;}
@@ -31,9 +95,18 @@
 .code > .content{
 	padding-left: 20px;
 }
+*{
+	box-sizing: border-box;
+	word-wrap:break-word;
+	word-break:break-all;
+	border-collapse: collapse;
+}
+.imgCen{
+	cursor: pointer;
+}
 .idx1, .idx2, .idx3, .idx4{
 	padding-top: 50px;
-	z-index: 1;
+	z-index: -98;
 	position: relative;
 }
 .idx1:after{
@@ -41,7 +114,7 @@
 	height: 100%;
 	background-size:100%;
 	content:"";
-	z-index: -1;
+	z-index: -99;
 	position: absolute;
 	background-image: url("${pageContext.servletContext.contextPath }/resources/imgs/hands.png");
 	background-repeat: no-repeat;
@@ -55,7 +128,7 @@
 	height: 100%;
 	background-size:100%;
 	content:"";
-	z-index: -1;
+	z-index: -99;
 	position: absolute;
 	background-image: url("${pageContext.servletContext.contextPath }/resources/imgs/center.jpg");
 	background-repeat: no-repeat;
@@ -69,7 +142,7 @@
 	height: 100%;
 	background-size:100%;
 	content:"";
-	z-index: -1;
+	z-index: -99;
 	position: absolute;
 	background-image: url("${pageContext.servletContext.contextPath }/resources/imgs/search.png");
 	background-repeat: no-repeat;
@@ -83,7 +156,7 @@
 	height: 100%;
 	background-size:100%;
 	content:"";
-	z-index: -1;
+	z-index: -99;
 	position: absolute;
 	background-image: url("${pageContext.servletContext.contextPath }/resources/imgs/gift.jpg");
 	background-repeat: no-repeat;
@@ -242,46 +315,53 @@ a {
 	}
 </script>
 </head>
-<body style="background-color: white;">
+<body style="background-color: white;overflow-x:hidden;">
 <%@ include file="./sub/header.jspf"%>
 <section class="home_wrap" style="">
 	
 <section class="section section--code" >
-	 <div style="margin: 0 auto;width: 1600px;height: 700px;border: none;padding: 0" class="code" aos="fade-down" aos-easing="linear" aos-duration="1000">
+	 <div style="margin: 0 auto;width: 1570px;height: 700px;border: none;padding: 0" class="code" aos="fade-down" aos-easing="linear" aos-duration="1000">
 	 	<div class="flash4-wrap"> 
 	<div class="flash4" style="margin-top: 25px;margin: 0 auto;float: left;">
 		<ul>
 	    	<li class="first">
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home1.jpg" width="538" height="385"  alt="" class="tm"></div>
-	            <div class="imgCen" style="">Fashion</div>
+	            <div class="imgCen" id="homePnum_0">Fashion</div>
+	            <div hidden="" id="h_pnum_0">패션</div>
 	        </li>
 	        <li>
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home2.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Merchadise</div>
+	            <div class="imgCen" id="homePnum_1">Merchadise</div>
+	            <div hidden="" id="h_pnum_1">잡화</div>
 	        </li>
 	        <li>
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home3.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Sports</div>
+	            <div class="imgCen" id="homePnum_2">Sports</div>
+	            <div hidden="" id="h_pnum_2">스포츠/레저/자동차</div>
 	        </li>
 	        <li>
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home4.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Baby</div>
+	            <div class="imgCen" id="homePnum_3">Baby</div>
+	            <div hidden="" id="h_pnum_3">유아</div>
 	        </li>
 	        <li>
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home5.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Furniture</div>
+	            <div class="imgCen" id="homePnum_4">Furniture</div>
+	            <div hidden="" id="h_pnum_4">가구/생활/건강</div>
 	        </li>
 	        <li>
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home6.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Digital</div>
+	            <div class="imgCen" id="homePnum_5">Digital</div>
+	            <div hidden="" id="h_pnum_5">디지털/가전/컴퓨터</div>
 	        </li>
 	        <li class="fast">
 	        	<div class="imgTop"><img src="${pageContext.servletContext.contextPath}/resources/imgs/home7.jpg" width="538" height="385"  alt=""></div>
-	            <div class="imgCen">Book</div>
+	            <div class="imgCen" id="homePnum_6">Book</div>
+	            <div hidden="" id="h_pnum_6">도서</div>
 	        </li>
 	    </ul>	
 	</div>
-	<div style="float:left; ;margin-top: 21px;margin-left:-6px;border: 1px solid #bcbcbc;width:408px;height: 384px;padding-top: 70px;padding-left: 15px;padding-right:15px;text-align: justify;">
+	<div style="float:left; ;margin-top: 21px;margin-left:-6px;border: 1px solid #bcbcbc;width:396px;height: 384px;padding-top: 70px;padding-left: 15px;padding-right:15px;text-align: justify;">
 			<span style="font-size: 35px;font-weight: bold;color: #b077e2;">TRADEMARK</span>
 			<span style="font-size: 20px;color: black;font-weight:bold;display: inline-block;text-indent: 5px;margin-top: 12px;position: absolute;">란?</span>
 			
@@ -289,16 +369,16 @@ a {
 				<br>사용하지 않는 물품을 최대의 가격으로 판매하고자 하는 사람, 원하는 가격으로 원하는 물건을 구입하고자 하는 사람이라면 누구나 저희 사이트의 회원이 될 수 있습니다.</span>
 	</div>
 </div>
-<div style="width:1582px;height:200px;margin: 15px auto 0 auto;">
+<div style="width:1570px;height:200px;margin: 15px auto 0 auto;">
 	<div style="width: 538px;float: left;height:100%;border-left:1px solid #bcbcbc;border-bottom: 1px solid #bcbcbc;border-top: 1px solid #bcbcbc ;padding-top: 65px;">
 		<p class="intro">"TRADEMARK에서는 누구나 판매자가 될 수 있고</p>
 		<p class="intro">누구나 구매자가 될 수 있습니다."</p>
 	</div>
-	<div style="width: 1044px;float: left;height:100%;border: 1px solid #bcbcbc;">
+	<div style="width: 1032px;float: left;height:100%;border: 1px solid #bcbcbc;">
 		<img alt="" src="${pageContext.servletContext.contextPath}/resources/imgs/home8.jpg" width="100%;"height="100%;">
 	</div>
 </div>
-<div style="width:1582px;height:200px;margin: 0 auto;border-left: 1px solid #bcbcbc;border-right: 1px solid #bcbcbc;border-bottom: 1px solid #bcbcbc;padding-top: 60px;">
+<div style="width:1570px;height:200px;margin: 0 auto;border-left: 1px solid #bcbcbc;border-right: 1px solid #bcbcbc;border-bottom: 1px solid #bcbcbc;padding-top: 60px;">
 	<div style="font-weight: bolder;
 			font-size: 2.8em; 
 			color: #333333;

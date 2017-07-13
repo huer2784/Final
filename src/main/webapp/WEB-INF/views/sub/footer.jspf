@@ -14,7 +14,7 @@ footer {
 
 .footer_wrap{
 	width: 1300px;
-	height: 220px;
+	height: 160px;
 	margin: 0 auto;
 	padding-top: 20px;
 }
